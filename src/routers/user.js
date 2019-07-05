@@ -1,7 +1,9 @@
 const express = require('express')
 const User = require('../models/User')
+const auth = require('../middleware/auth')
 
 const router = express.Router()
+
 
 router.post('/users', async (req, res) => {
     // Create a new user
@@ -14,6 +16,7 @@ router.post('/users', async (req, res) => {
         res.status(400).send(error)
     }
 })
+
 
 router.post('/users/login', async(req, res) => {
     //Login a registered user
@@ -30,5 +33,12 @@ router.post('/users/login', async(req, res) => {
     }
 
 })
+
+
+router.get('/users/me', auth, async(req, res) => {
+    // View logged in user profile
+    res.send(req.user)
+})
+
 
 module.exports = router

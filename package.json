@@ -4,5 +4,17 @@
   "description": "Version 2.0 Products Prescrypto",
   "main": "index.js",
   "author": "@xtornasol512",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.3",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^9.0.3",
+    "nodemon": "^1.19.1"
+  }
 }
